@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: master # Branch to update (master by default)
 
-media_folder: "img/uploads" # Folder where user uploaded files should go
+media_folder: "media" # Folder where user uploaded files should go
 
 collections: # A list of collections the CMS should be able to edit
   - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
@@ -17,15 +17,31 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Categories", name: "categories", widget: "string", required: false}
       - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mm:ss"}
-  - name: "event" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Launch Events" # Used in the UI, ie.: "New Post"
-    folder: "_events" # The path to the folder where the documents are stored
-    sort: "title:asc" # Default is title:asc
-    create: true # Allow users to create new documents in this collection
+  - name: "event"
+    label: "Launch Events"
+    folder: "_events"
+    sort: "title:asc"
+    create: true
     slug: "{{slug}}"
-    fields: # The fields each document in this collection have
+    fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
-      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Company", name: "company", widget: "relation", collection: "companies", value_field: "company.title", search_fields: ["company.title"]}
+      - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}
       - {label: "Start Date", name: "startDate", widget: "datetime", format: "YYYY-MM-DD"}
       - {label: "Finish Date", name: "finishDate", widget: "datetime", format: "YYYY-MM-DD"}
+  - name: "company"
+    label: "Companies"
+    folder: "_companies"
+    sort: "title:asc"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Events", name: "events", widget: "relation", collection: "events", value_field: "event.title", search_fields: ["event.title"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Image", name: "image", widget: "image"}

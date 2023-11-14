@@ -2,3 +2,5 @@ _site
 .sass-cache
 .jekyll-metadata
 .users.yml
+_events/.DS_Store
+_companies/.DS_Store
