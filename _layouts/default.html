@@ -1,0 +1,10 @@
+{% include head.html %}
+
+  <header class="post-header">
+    <h1 class="post-title">GARGGGGHH!!  {{ page.title }}</h1>
+    <p class="post-meta">{{ page.dateStart | date: "%b %-d, %Y" }} - {{ page.dateFinish | date: "%b %-d, %Y" }}</p>
+  </header>
+
+  <article class="post-content">
+    {{ content }}
+  </article>

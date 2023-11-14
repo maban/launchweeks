@@ -42,6 +42,12 @@ rss: rss
 #   - vendor/gems/
 #   - vendor/ruby/
 
+defaults:
+  - scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+
 collections:
   events:
     output: true

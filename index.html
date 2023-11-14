@@ -2,13 +2,16 @@
 
 section: home
 type: home
+layout: default
 ---
 
 yo
 
 {% for event in site.events %}
 <ul>
-    <li><a href="{{ event.url }}">{{ event.title }}</a></li>
+    <li><a href="{{ event.url }}">{{ event.title }}</a>
+    <br/>{{ event.startDate | date_to_long_string }} - {{ event.finishDate | date_to_long_string }}
+    </li>
 </ul>
 {% endfor %}
 
@@ -17,5 +20,8 @@ yo
 {% for company in site.companies %}
 <ul>
     <li><a href="{{ company.url }}">{{ company.title }}</a></li>
+    {% for events in company.events %}
+      <a href="{{ event.url }}">{{ event.title }}</a>
+    {% endfor %}
 </ul>
 {% endfor %}
