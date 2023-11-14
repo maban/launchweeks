@@ -12,7 +12,7 @@ collections: # A list of collections the CMS should be able to edit
     create: true # Allow users to create new documents in this collection
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     extension: "md"
-    format: "md"
+    format: "yaml-frontmatter"
     fields: # The fields each document in this collection have
       - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
@@ -26,7 +26,7 @@ collections: # A list of collections the CMS should be able to edit
     create: true
     slug: "{{slug}}"
     extension: "md"
-    format: "md"
+    format: "yaml-frontmatter"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "company"}
       - {label: "Company", name: "company", widget: "relation", collection: "companies", value_field: "company.title", search_fields: ["company.title"]}
@@ -43,7 +43,7 @@ collections: # A list of collections the CMS should be able to edit
     create: true
     slug: "{{slug}}"
     extension: "md"
-    format: "md"
+    format: "yaml-frontmatter"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
       - {label: "Events", name: "events", widget: "relation", collection: "events", value_field: "event.title", search_fields: ["event.title"]}
