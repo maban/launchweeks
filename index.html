@@ -11,3 +11,11 @@ yo
     <li><a href="{{ event.url }}">{{ event.title }}</a></li>
 </ul>
 {% endfor %}
+
+<hr/>
+
+{% for company in site.companies %}
+<ul>
+    <li><a href="{{ company.url }}">{{ company.title }}</a></li>
+</ul>
+{% endfor %}
