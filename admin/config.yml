@@ -29,13 +29,13 @@ collections: # A list of collections the CMS should be able to edit
     format: "yaml-frontmatter"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "company"}
-      - {label: "Company", name: "company", widget: "relation", collection: "companies", value_field: "company.title", search_fields: ["company.title"]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "body", widget: "markdown"}
-      - {label: "Link", name: "link", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
-      - {label: "Start Date", name: "startDate", widget: "datetime", date_format: "dddd Do MMMM YYYY", time_format: false}
-      - {label: "Finish Date", name: "finishDate", widget: "datetime", date_format: "dddd Do MMMM YYYY", time_format: false}
+      - {label: "Company", name: "company", widget: "relation", collection: "companies", value_field: "company.title", search_fields: ["company.title"], required: false}
+      - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Description", name: "body", widget: "markdown", required: false}
+      - {label: "Link", name: "link", widget: "string", required: false}
+      - {label: "Image", name: "image", widget: "image", required: false}
+      - {label: "Start Date", name: "startDate", widget: "datetime", date_format: "dddd Do MMMM YYYY", time_format: false, required: false}
+      - {label: "Finish Date", name: "finishDate", widget: "datetime", date_format: "dddd Do MMMM YYYY", time_format: false, required: false}
   - name: "company"
     label: "Companies"
     folder: "_companies"
@@ -46,8 +46,8 @@ collections: # A list of collections the CMS should be able to edit
     format: "yaml-frontmatter"
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
-      - {label: "Events", name: "events", widget: "relation", collection: "events", value_field: "event.title", search_fields: ["event.title"]}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Description", name: "body", widget: "markdown"}
-      - {label: "Link", name: "link", widget: "string"}
-      - {label: "Image", name: "image", widget: "image"}
+      - {label: "Events", name: "events", widget: "relation", collection: "events", value_field: "event.title", search_fields: ["event.title"], required: false}
+      - {label: "Title", name: "title", widget: "string", required: false}
+      - {label: "Description", name: "body", widget: "markdown", required: false}
+      - {label: "Link", name: "link", widget: "string", required: false}
+      - {label: "Image", name: "image", widget: "image", required: false}
