@@ -1,0 +1,52 @@
+
+body{ 
+  background-color: yellow;
+}
+
+a {
+  border-bottom: none;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  gap: 10px 20px;
+  align-content: flex-start;
+}
+
+.card {
+  background-color: white;
+  flex:auto;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 400px;
+  border-radius: 0.25em;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.card__image {
+  order: 1;
+}
+
+.card__title {
+  order: 2;
+}
+
+.card__dates {
+  order: 3;
+}
+
+.card__title,
+.card__dates {
+  padding: 0 20px;
+}

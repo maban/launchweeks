@@ -1,10 +1,21 @@
 {% include head.html %}
 
-  <header class="post-header">
-    <h1 class="post-title">GARGGGGHH!!  {{ page.title }}</h1>
-    <p class="post-meta">{{ page.dateStart | date: "%b %-d, %Y" }} - {{ page.dateFinish | date: "%b %-d, %Y" }}</p>
-  </header>
+<h1 class="title">{{ page.title }}</h1>
 
-  <article class="post-content">
-    {{ content }}
-  </article>
+{% if page.image %}<img class="card__image" src="/media/{{ page.image}}" alt="" />{% endif %}
+
+    {% if company.events %}
+      <ul>
+        {% for event in company.events %}
+        <li>
+          <a href="{{ event.url }}" class="card__title">
+            {{ event.title }}
+            {% if event.image %}<img class="card__image" src="/media/{{ event.image}}" alt="" />{% endif %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+
+{{content}}

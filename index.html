@@ -2,26 +2,46 @@
 
 section: home
 type: home
-layout: default
+layout: home
 ---
 
-yo
 
-{% for event in site.events %}
-<ul>
-    <li><a href="{{ event.url }}">{{ event.title }}</a>
-    <br/>{{ event.startDate | date_to_long_string }} - {{ event.finishDate | date_to_long_string }}
-    </li>
+<h2>Launch Weeks</h2>
+
+<ul class="cards events">
+  {% for event in site.events %}
+  <li class="card">
+    <a class="card__link" href="{{ event.url }}">
+      <h3 class="card__title">{{ event.title }}</h3>
+      {% if event.image %}<img class="card__image" src="/media/{{ event.image}}" alt="" />{% endif %}
+      <p class="card__dates"><time datetime="{{ event.startDate }}">{{ event.startDate | date_to_long_string }}</time> - <time datetime="{{ event.startDate }}">{{ event.finishDate | date_to_long_string }}</time></p>
+    </a>
+  </li>
+  {% endfor %}
 </ul>
-{% endfor %}
 
-<hr/>
+<h2>Companies</h2>
 
-{% for company in site.companies %}
-<ul>
-    <li><a href="{{ company.url }}">{{ company.title }}</a></li>
-    {% for events in company.events %}
-      <a href="{{ event.url }}">{{ event.title }}</a>
-    {% endfor %}
+<ul class="cards companies">
+  {% for company in site.companies %}
+  <li class="card">
+    <a href="{{ company.url }}" class="card__link">
+      <h3 class="card__title">{{ company.title }}</h3>
+      {% if company.image %}<img class="card__image" src="/media/{{ company.image}}" alt="" />{% endif %}
+    </a>
+    {% if company.events %}
+      <ul>
+        {% for event in company.events %}
+        <li>
+          <a href="{{ event.url }}" class="card__title">
+            {{ event.title }}
+            {% if event.image %}<img class="card__image" src="/media/{{ event.image}}" alt="" />{% endif %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </li>
+  {% endfor %}
 </ul>
-{% endfor %}
+
