@@ -7,10 +7,11 @@ layout: home
 {% assign eventsByYear = site.events | sort: 'start' | reverse | group_by_exp:"post", "post.start | date: '%Y'" %}
 
 
-<header class="header">
+<header class="site-header">
   <h1>Launch Weeks</h1>
   <p>Tracking past and upcoming launch weeks across the dev tools space</p>
-  <p><a href="/guide">The Launch Weeks Guide</a></p>
+  <p><a href="/guide">📔 The Launch Weeks Guide</a></p>
+  <p><a href="/">+ Add your launch week</a></p>
   <ul class="years">
     {% for year in eventsByYear %}
     <li class="year">
@@ -20,38 +21,36 @@ layout: home
   </ul>
 </header>
 
-
 {% for year in eventsByYear %}
 <h2 id="{{ year.name }}">{{ year.name }}</h2>
-  <ul class="cards events">
-    {% for event in year.items %}
-    <li class="card">
-      <div class="card__description">
-        <h3 class="card__title">{{ event.title }}</h3>
-        <p class="card__dates"><time datetime="{{ event.start }}">{{ event.start | date_to_long_string }}</time> - <time datetime="{{ event.start }}">{{ event.finish | date_to_long_string }}</time></p>
-        <ul class="card__links">
-          {% if event.launchpage %}
-          <li>
-            <a class="card__link" href="{{ event.launchpage }}">🚀 Launch page</a>
-          </li>
-          {% endif %}
-          {% if event.announcement %}
-          <li>
-            <a class="card__link" href="{{ event.announcement }}">📣 Announcement</a>
-          </li>
-          {% endif %}
-          {% if event.recap %}
-          <li>
-            <a class="card__link" href="{{ event.recap }}">📄 Recap</a>
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-      {% if event.image %}<img class="card__image" src="{{ event.image }}" alt="" />{% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-  
+<ul class="cards events">
+  {% for event in year.items %}
+  <li class="card">
+    <div class="card__description">
+      <h3 class="card__title">{{ event.title }}</h3>
+      <p class="card__dates"><time datetime="{{ event.start }}">{{ event.start | date_to_long_string }}</time> → <time datetime="{{ event.start }}">{{ event.finish | date_to_long_string }}</time></p>
+      <ul class="card__links">
+        {% if event.launchpage %}
+        <li>
+          <a class="card__link" href="{{ event.launchpage }}">🚀 Launch page</a>
+        </li>
+        {% endif %}
+        {% if event.announcement %}
+        <li>
+          <a class="card__link" href="{{ event.announcement }}">📣 Announcement</a>
+        </li>
+        {% endif %}
+        {% if event.recap %}
+        <li>
+          <a class="card__link" href="{{ event.recap }}">📄 Recap</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+    {% if event.image %}<img class="card__image" src="{{ event.image }}" alt="" />{% endif %}
+  </li>
+  {% endfor %}
+</ul>
 {% endfor %}
 
 

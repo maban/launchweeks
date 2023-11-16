@@ -1,6 +1,7 @@
 backend:
   name: git-gateway
   branch: master
+  url: https://launch-weeks.netlify.app/
 
 media_folder: "media"
 
@@ -13,6 +14,8 @@ collections:
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
+    editor:
+      preview: false
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "company"}
       - {label: "Company", name: "company", widget: "relation", collection: "company", value_field: "title", search_fields: ["title"], required: false}
@@ -31,8 +34,21 @@ collections:
     slug: "{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
+    editor:
+      preview: false
     fields:
       - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
       - {label: "Events", name: "events", widget: "relation", collection: "event", value_field: "title", search_fields: ["title"], required: false, multiple: true}
       - {label: "Title", name: "title", widget: "string", required: false}
       - {label: "Image", name: "image", widget: "image", required: false, hint: "This needs to be a 400x400px png with the filename `avatar-companyname`."}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Guide page"
+        name: "guide"
+        file: "guide.html"
+        editor:
+          preview: false
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: "Body", name: "body", widget: "markdown"}

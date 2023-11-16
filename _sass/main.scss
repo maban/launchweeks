@@ -2,6 +2,10 @@
 body{ 
   background-color: #333;
   color: #fff;
+  background: rgb(143,40,133);
+  background: url("/assets/stars.png"), linear-gradient(0deg, rgba(143,40,133,1) 0%, rgba(24,48,94,1) 23%, rgba(70,81,113,1) 100%);
+  background-attachment: fixed;
+  background-blend-mode: screen;
 }
 
 h1,
@@ -12,22 +16,64 @@ nav > h1 {
 	color: #fff;
 }
 
-a {
-  border-bottom: none;
+a,
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  color:  #1d7bb4;
+  border-bottom: 1px solid #1d7bb4;
+  font-weight: bold;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #6bc7ff;
+  border-bottom-color: #6bc7ff;
 }
 
-.header {
+header,
+footer {
   border: none;
 }
+
+.site-header {
+  padding: 2em 0 1em 0;
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  a:focus,
+  a:active {
+    color: #fd36c3;
+    font-weight: bold;
+    border-bottom-color: #fd36c3;
+  }
+  a:hover,
+  a:focus,
+  a:active {
+    color: #ff8bdd;
+    border-bottom-color: #ff8bdd;
+  }
+}
+
+
 
 .title {
   padding: 0 20px;
 }
 
-.content {
+.content,
+.site-footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+.site-footer {
+  margin-top: 5em;
+  display: block;
 }
 
 .cards {
@@ -66,7 +112,6 @@ a {
 .card__links {
   margin: 0;
   padding: 0;
-  color: #333;
   font-size: 0.9em;
   display: flex;
   flex-direction: row;
@@ -93,14 +138,6 @@ a {
   
   
   
-}
-
-.card__link:link,
-.card__link:visited,
-.card__link:hover,
-.card__link:focus,
-.card__link:active {
-  color: #333;
 }
 
 .card__image {
@@ -150,7 +187,7 @@ a {
 
 
 .years {
-  margin: 0;
+  margin: 2em 0 0 0;
   padding: 0;
   color: #333;
   font-size: 0.9em;
@@ -175,3 +212,4 @@ a {
     }
   }
 }
+
