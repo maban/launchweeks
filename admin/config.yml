@@ -17,11 +17,12 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "company"}
       - {label: "Company", name: "company", widget: "relation", collection: "company", value_field: "title", search_fields: ["title"], required: false}
       - {label: "Title", name: "title", widget: "string", required: false}
-      - {label: "Description", name: "body", widget: "markdown", required: false}
-      - {label: "Link", name: "link", widget: "string", required: false}
+      - {label: "Launch page", name: "launchpage", description: "The url of the launch page", widget: "string", required: false}
+      - {label: "Announcement", name: "announcement", description: "The url of the announcement", widget: "string", required: false}
+      - {label: "Recap", name: "recap", description: "The url of any recap or blog post summarising the week", widget: "string", required: false}
       - {label: "Image", name: "image", widget: "image", required: false, hint: "This needs to be a 1500x400px png with the filename `event-companyname-number`."}
-      - {label: "Start Date", name: "startDate", widget: "datetime", date_format: "dddd Do MMMM YYYY", time_format: false, required: false}
-      - {label: "Finish Date", name: "finishDate", widget: "datetime", date_format: "dddd Do MMMM YYYY", time_format: false, required: false}
+      - {label: "Start Date", name: "start", widget: "datetime", date_format: "dddd Do MMMM YYYY", time_format: false, required: false}
+      - {label: "Finish Date", name: "finish", widget: "datetime", date_format: "dddd Do MMMM YYYY", time_format: false, required: false}
   - name: "company"
     label: "Companies"
     folder: "_companies"
@@ -34,5 +35,4 @@ collections:
       - {label: "Layout", name: "layout", widget: "hidden", default: "event"}
       - {label: "Events", name: "events", widget: "relation", collection: "event", value_field: "title", search_fields: ["title"], required: false, multiple: true}
       - {label: "Title", name: "title", widget: "string", required: false}
-      - {label: "Link", name: "link", widget: "string", required: false}
       - {label: "Image", name: "image", widget: "image", required: false, hint: "This needs to be a 400x400px png with the filename `avatar-companyname`."}

@@ -1,16 +1,37 @@
 {% include head.html %}
 
+<p><a href="/">← Launch weeks</a></p>
+
+<section class="content">
+
 <h1 class="title">{{ page.title }}</h1>
 
-{% if page.image %}<img class="card__image" src="/media/{{ page.image}}" alt="" />{% endif %}
+{% if page.image %}<img class="card__image" src="{{ page.image}}" alt="" />{% endif %}
+
+{% if page.start %}<p class="card__dates"><time datetime="{{ page.start }}">{{ page.start | date_to_long_string }}</time> - <time datetime="{{ page.start }}">{{ page.finish | date_to_long_string }}</time></p>{% endif %}
+
 
     {% if company.events %}
+    
       <ul>
         {% for event in company.events %}
         <li>
           <a href="{{ event.url }}" class="card__title">
             {{ event.title }}
-            {% if event.image %}<img class="card__image" src="/media/{{ event.image}}" alt="" />{% endif %}
+            {% if event.image %}<img class="card__image" src="{{ event.image}}" alt="" />{% endif %}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+{% if page.events %}
+      <ul>
+        {% for event in page.events %}
+        <li>
+          <a href="{{ event.url }}" class="card__title">
+            {{ event }}
+            {% if event.image %}<img class="card__image" src="{{ event.image}}" alt="" />{% endif %}
           </a>
         </li>
         {% endfor %}
@@ -19,3 +40,7 @@
 
 
 {{content}}
+
+</section>
+
+{% include foot.html %}

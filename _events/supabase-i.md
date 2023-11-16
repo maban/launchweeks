@@ -1,12 +1,9 @@
-# Supabase Launch Week I
-
-Company: Supabase (../Companies%20with%20Launch%20Weeks%20b3b529cfdf5045da9c2496b37110600f/Supabase%204ba897babee24d62a59e30407a767c30.md)
-Date: March 29, 2021 → April 2, 2021
-Link: https://supabase.com/blog/launch-week
-Launch page: No
-
-## Recap
-
 ---
-
-[Launch week](https://supabase.com/blog/launch-week)
+title: Supabase Launch Week I
+company: Supabase
+start: 2021-03-29
+finish: 2021-04-02
+link: https://supabase.com/blog/launch-week
+image: /media/event-supabase-1.png
+launchpage: false
+---

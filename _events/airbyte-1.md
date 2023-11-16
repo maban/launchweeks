@@ -1,9 +1,8 @@
 ---
-company: Airbyte
-title: Airbyte Launch Week 1
-link: https://airbyte.com/launch-weeks/week-1
-launchpage: Yes
+title: Airbyte
+company: Airbyte Launch Week 1
+start: 2022-04-04
+finish: 2022-04-07
 image: /media/event-airbyte.png
-startDate: 2022-04-04T20:45:27.631Z
-finishDate: 2022-04-07T20:45:27.636Z
+launchpage: https://airbyte.com/launch-weeks/week-1
 ---
