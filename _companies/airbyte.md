@@ -1,5 +1,6 @@
 ---
-events: Airbyte Launch Week 1
+events:
+  - Airbyte
 title: Airbyte
 image: /media/avatar-airbyte.png
 ---
